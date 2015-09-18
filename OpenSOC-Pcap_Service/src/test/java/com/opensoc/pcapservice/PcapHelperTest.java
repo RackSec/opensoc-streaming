@@ -1,12 +1,12 @@
 /**
- * 
+ *
  */
 package com.opensoc.pcapservice;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.eclipse.jdt.internal.core.Assert;
+import org.junit.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ import com.opensoc.pcapservice.PcapHelper.TimeUnit;
 // TODO: Auto-generated Javadoc
 /**
  * The Class PcapHelperTest.
- * 
+ *
  * @author Sayi
  */
 @RunWith(PowerMockRunner.class)
@@ -30,7 +30,7 @@ public class PcapHelperTest {
 
   /**
    * Sets the up.
-   * 
+   *
    * @throws Exception
    *           the exception
    */
@@ -41,7 +41,7 @@ public class PcapHelperTest {
 
   /**
    * Tear down.
-   * 
+   *
    * @throws Exception
    *           the exception
    */
@@ -61,7 +61,7 @@ public class PcapHelperTest {
     long endTime = 1111122222L; // input time in seconds
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1111122222L == time);
+    Assert.assertTrue(1111122222L == time);
   }
 
   /**
@@ -76,7 +76,7 @@ public class PcapHelperTest {
     long endTime = 1111122222333L; // input time in millis
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1111122222L == time);
+    Assert.assertTrue(1111122222L == time);
   }
 
   /**
@@ -91,7 +91,7 @@ public class PcapHelperTest {
     long endTime = 1111122222333444L; // input time in micros
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1111122222L == time);
+    Assert.assertTrue(1111122222L == time);
   }
 
   /**
@@ -106,7 +106,7 @@ public class PcapHelperTest {
     long endTime = 1111122222L; // input time in seconds
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1111122222000L == time);
+    Assert.assertTrue(1111122222000L == time);
   }
 
   /**
@@ -121,7 +121,7 @@ public class PcapHelperTest {
     long endTime = 111112222233L; // input time in millis
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(111112222233L == time);
+    Assert.assertTrue(111112222233L == time);
   }
 
   /**
@@ -136,7 +136,7 @@ public class PcapHelperTest {
     long endTime = 111112222233344L; // input time in micros
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(111112222233L == time);
+    Assert.assertTrue(111112222233L == time);
   }
 
   /**
@@ -151,7 +151,7 @@ public class PcapHelperTest {
     long endTime = 1111122222L; // input time in seconds
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1111122222000000L == time);
+    Assert.assertTrue(1111122222000000L == time);
   }
 
   /**
@@ -166,7 +166,7 @@ public class PcapHelperTest {
     long endTime = 13388; // input time in seconds
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(13388000000L == time);
+    Assert.assertTrue(13388000000L == time);
   }
 
   /**
@@ -181,7 +181,7 @@ public class PcapHelperTest {
     long endTime = 111112222233L; // input time in millis
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(111112222233000L == time);
+    Assert.assertTrue(111112222233000L == time);
   }
 
   /**
@@ -196,7 +196,7 @@ public class PcapHelperTest {
     long endTime = 1111122222334444L; // input time in micros
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1111122222334444L == time);
+    Assert.assertTrue(1111122222334444L == time);
   }
 
   /**
@@ -211,7 +211,7 @@ public class PcapHelperTest {
     long endTime = 0; // input time in micros
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(0 == time);
+    Assert.assertTrue(0 == time);
   }
 
   /**
@@ -226,7 +226,7 @@ public class PcapHelperTest {
     long endTime = 1; // input time in micros
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(1000000L == time);
+    Assert.assertTrue(1000000L == time);
   }
 
   /**
@@ -241,7 +241,7 @@ public class PcapHelperTest {
     long inputTime = 13; // input time in seconds (double to long type casting)
     long time = PcapHelper.convertSecondsToDataCreationTimeUnit(inputTime);
 
-    Assert.isTrue(13000000L == time);
+    Assert.assertTrue(13000000L == time);
   }
 
   /**
@@ -257,7 +257,7 @@ public class PcapHelperTest {
                                    // casting)
     long time = PcapHelper.convertToDataCreationTimeUnit(endTime);
 
-    Assert.isTrue(111000000L == time);
+    Assert.assertTrue(111000000L == time);
   }
 
   /**
@@ -266,7 +266,7 @@ public class PcapHelperTest {
   @Test
   public void test_getDataCreationTimeUnit() {
     TimeUnit dataCreationTimeUnit = PcapHelper.getDataCreationTimeUnit();
-    Assert.isTrue(TimeUnit.MILLIS == dataCreationTimeUnit);
+    Assert.assertTrue(TimeUnit.MILLIS == dataCreationTimeUnit);
   }
 
   /**
@@ -276,8 +276,8 @@ public class PcapHelperTest {
   public void test_reverseKey_valid() {
     String key = "162.242.152.24-162.242.153.12-TCP-38190-9092";
     String reversekey = PcapHelper.reverseKey(key);
-    Assert.isTrue("162.242.153.12-162.242.152.24-TCP-9092-38190"
-        .equals(reversekey));
+    Assert.assertTrue("162.242.153.12-162.242.152.24-TCP-9092-38190"
+            .equals(reversekey));
   }
 
   /**
@@ -287,7 +287,7 @@ public class PcapHelperTest {
   public void test_reverseKey_valid_withFragment() {
     String key = "162.242.152.24-162.242.153.12-TCP-38190-9092-fragmentId";
     String reversekey = PcapHelper.reverseKey(key);
-    Assert.isTrue("162.242.153.12-162.242.152.24-TCP-9092-38190"
+    Assert.assertTrue("162.242.153.12-162.242.152.24-TCP-9092-38190"
         .equals(reversekey));
   }
 
@@ -298,7 +298,7 @@ public class PcapHelperTest {
   public void test_reverseKey_inValid() {
     String key = "162.242.152.24-162.242.153.12-TCP-38190-9092-ipId-fragmentId-extra";
     String reversekey = PcapHelper.reverseKey(key);
-    Assert.isTrue("".equals(reversekey));
+    Assert.assertTrue("".equals(reversekey));
   }
 
   /**
@@ -312,9 +312,9 @@ public class PcapHelperTest {
 
     List<String> reverseKeys = PcapHelper.reverseKey(Arrays.asList(keys));
 
-    Assert.isTrue("162.242.153.12-162.242.152.24-TCP-9092-38190"
-        .equals(reverseKeys.get(0)));
-    Assert.isTrue("162.242.153.12-162.242.152.24-UDP-9092-38190"
+    Assert.assertTrue("162.242.153.12-162.242.152.24-TCP-9092-38190"
+            .equals(reverseKeys.get(0)));
+    Assert.assertTrue("162.242.153.12-162.242.152.24-UDP-9092-38190"
         .equals(reverseKeys.get(1)));
   }
 

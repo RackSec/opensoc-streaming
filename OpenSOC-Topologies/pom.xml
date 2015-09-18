@@ -82,7 +82,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_2.8.2</artifactId>
+			<artifactId>kafka_${global_kafka_scala_version}</artifactId>
 			<version>${global_kafka_version}</version>
 			<exclusions>
 				<!--exclusion> <groupId>org.apache.zookeeper</groupId> <artifactId>zookeeper</artifactId> 

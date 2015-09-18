@@ -1,6 +1,6 @@
 package com.opensoc.pcapservice;
 
-import org.eclipse.jdt.internal.core.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.opensoc.pcapservice.ConfigurationUtil;
@@ -17,7 +17,7 @@ public class ConfigurationUtilTest {
   @Test
   public void test_getMaxAllowableResultSizeInBytes() {
     long result = ConfigurationUtil.getMaxResultSize();
-    Assert.isTrue(result == 62914560);
+    Assert.assertTrue(result == 62914560);
   }
 
   /**
@@ -26,7 +26,7 @@ public class ConfigurationUtilTest {
   @Test
   public void test_getMaxAllowableResultsSizeUnit() {
     SizeUnit result = ConfigurationUtil.getResultSizeUnit();
-    Assert.isTrue(SizeUnit.MB == result);
+    Assert.assertTrue(SizeUnit.MB == result);
   }
 
   /**
@@ -35,7 +35,7 @@ public class ConfigurationUtilTest {
   @Test
   public void test_getMaxRowSizeInBytes() {
     long result = ConfigurationUtil.getMaxRowSize();
-    Assert.isTrue(result == 71680);
+    Assert.assertTrue(result == 71680);
   }
 
   /**
@@ -44,7 +44,7 @@ public class ConfigurationUtilTest {
   @Test
   public void test_getMaxRowSizeUnit() {
     SizeUnit result = ConfigurationUtil.getRowSizeUnit();
-    Assert.isTrue(SizeUnit.KB == result);
+    Assert.assertTrue(SizeUnit.KB == result);
   }
 
 }
