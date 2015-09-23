@@ -404,6 +404,7 @@ public class PacketInfo {
   private String getJsonIndexDocUsingSBAppend() {
 
 	Long ts_micro = getPacketTimeInNanos() / 1000L;
+  Long ts_millis = ts_micro / 1000L;
 	StringBuffer jsonSb = new StringBuffer(175);
 
 	jsonSb.append("{\"pcap_id\":\"").append(getShortKey());
@@ -411,6 +412,7 @@ public class PacketInfo {
     jsonSb.append(",\"ip_id\":").append(ipv4Packet.getId());
     jsonSb.append(",\"frag_offset\":").append(ipv4Packet.getFragmentOffset());
     jsonSb.append(",\"ts_micro\":").append(ts_micro);
+    jsonSb.append(",\"ts_millis\":").append(ts_millis);
 
 
     // tcp header
