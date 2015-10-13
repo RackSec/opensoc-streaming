@@ -33,12 +33,8 @@ public class FalconHoseAlertAdapter implements AlertsAdapter, Serializable {
 
         JSONObject content = (JSONObject)raw_message.get("message");
 
-        String source = "unknown";
         String dest = "unknown";
 
-        if (content.containsKey("ip_src_addr")) {
-            source = content.get("ip_src_addr").toString();
-        }
         if (content.containsKey("ip_dst_addr")) {
             dest = content.get("ip_dst_addr").toString();
         }
